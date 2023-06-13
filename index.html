@@ -20,6 +20,12 @@
     
             }
 
+          /* div.creature{
+                background-color: Red;
+                border: 2px solid blue;
+            }*/
+            
+
         </style>
     </head>   
     <body>
@@ -43,7 +49,7 @@
             <li>insect: dashed orange</li>
         </ul>
     </div>
-    <div class="creature">    
+    <div class="creature" data-home="land" data-type="animal">    
         <img src="images/monkey.png" alt="monkey">
         <h3>Monkey</h3>
         <p>Monkeys are cute, but don't try to cuddle them.</p>
@@ -99,7 +105,30 @@
                 if creature lives in air, yellow
                 
                 */
-               alert("showHome()");
+               let myHome ="";
+                const myNodelist = document.querySelectorAll("div-creature");
+                for (let i = 0; i < myNodelist.length; i++) {
+
+                    myHome = myNodelist[i].dataset.home;
+
+                
+                 //myNodelist[i].style.backgroundColor = "red";
+                 switch(myHome){
+                    case "land":
+                    myNodelist[i].style.backgroundColor = "green";
+                      break;
+
+                    case "water":
+                    myNodelist[i].style.backgroundColor = "purple";
+                      break;
+
+                     case "air":
+                    myNodelist[i].style.backgroundColor = "yellow";
+                      break;
+
+                 }
+
+}
             
         }//end showHome()
         
@@ -111,7 +140,11 @@
                 if creature is an animal, border color solid red
                 if creature is an insect, border color is dashed orange
             */
-            alert("showType()");
+            let myHome ="";
+                const myNodelist = document.querySelectorAll("div-creature");
+                for (let i = 0; i < myNodelist.length; i++) {
+
+                    myHome = myNodelist[i].dataset.home;
         }//end showType()
 
         function clearAll()
@@ -125,6 +158,7 @@
             */
             alert("clearAll()");
         }//end clearAll()
+    }
 
     </script>    
     </body>
